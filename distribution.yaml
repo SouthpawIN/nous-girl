@@ -1,0 +1,12 @@
+name: hermes-nous-girl
+version: 0.1.0
+description: "Voice-first idea catcher \u2014 captures conversations and hands off\
+  \ to Senter"
+author: SouthpawIN
+license: MIT
+hermes_requires: '>=0.12.0'
+env_requires: []
+distribution_owned:
+- SOUL.md
+- config.yaml
+- skills
