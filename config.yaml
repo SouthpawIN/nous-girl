@@ -1,6 +1,7 @@
 model:
   provider: nous
   default: Darwin-28B-REASON
+  base_url: ***
 providers: {}
 fallback_providers: []
 credential_pool_strategies: {}
@@ -8,14 +9,20 @@ toolsets:
 - hermes-cli
 agent:
   max_turns: 90
+  gateway_timeout: 1800
   restart_drain_timeout: 180
   api_max_retries: 3
   service_tier: ''
   tool_use_enforcement: auto
+  gateway_timeout_warning: 900
+  gateway_notify_interval: 180
+  gateway_auto_continue_freshness: 3600
   image_input_mode: auto
   disabled_toolsets: []
 terminal:
+  backend: local
   modal_mode: auto
+  cwd: .
   timeout: 180
   env_passthrough: []
   shell_init_files: []
@@ -32,6 +39,7 @@ terminal:
   container_disk: 51200
   container_persistent: true
   docker_volumes: []
+  docker_mount_cwd_to_workspace: false
   docker_run_as_host_user: false
   persistent_shell: true
 browser:
@@ -45,6 +53,13 @@ browser:
   dialog_timeout_s: 300
   camofox:
     managed_persistence: false
+checkpoints:
+  enabled: true
+  max_snapshots: 50
+  auto_prune: false
+  retention_days: 7
+  delete_orphans: true
+  min_interval_hours: 24
 file_read_max_chars: 100000
 tool_output:
   max_bytes: 50000
@@ -61,6 +76,12 @@ tool_loop_guardrails:
     exact_failure: 5
     same_tool_failure: 8
     idempotent_no_progress: 5
+compression:
+  enabled: true
+  threshold: 0.5
+  target_ratio: 0.2
+  protect_last_n: 20
+  hygiene_hard_message_limit: 400
 prompt_caching:
   cache_ttl: 5m
 openrouter:
@@ -70,43 +91,66 @@ auxiliary:
   vision:
     provider: nous
     model: qwen3.6-35b-a3b
+    base_url: ***
+    api_key: ***
     timeout: 120
     extra_body: {}
     download_timeout: 30
   web_extract:
     provider: nous
     model: qwen3.6-35b-a3b
+    base_url: ***
+    api_key: ***
     timeout: 360
+    extra_body: {}
+  compression:
+    provider: nous
+    model: qwen3.6-35b-a3b
+    base_url: ***
+    api_key: ***
+    timeout: 120
     extra_body: {}
   session_search:
     provider: nous
     model: qwen3.6-35b-a3b
+    base_url: ***
+    api_key: ***
     timeout: 30
     extra_body: {}
     max_concurrency: 3
   skills_hub:
     provider: nous
     model: qwen3.6-35b-a3b
+    base_url: ***
+    api_key: ***
     timeout: 30
     extra_body: {}
   approval:
     provider: nous
     model: qwen3.6-35b-a3b
+    base_url: ***
+    api_key: ***
     timeout: 30
     extra_body: {}
   mcp:
     provider: nous
     model: qwen3.6-35b-a3b
+    base_url: ***
+    api_key: ***
     timeout: 30
     extra_body: {}
   title_generation:
     provider: nous
     model: qwen3.6-35b-a3b
+    base_url: ***
+    api_key: ***
     timeout: 30
     extra_body: {}
   curator:
     provider: nous
     model: qwen3.6-35b-a3b
+    base_url: ***
+    api_key: ***
     timeout: 600
     extra_body: {}
 display:
@@ -202,6 +246,8 @@ memory:
 delegation:
   model: ''
   provider: ''
+  base_url: ***
+  api_key: ***
   inherit_mcp_toolsets: true
   max_iterations: 50
   child_timeout_seconds: 600
@@ -274,6 +320,7 @@ cron:
   wrap_response: true
   max_parallel_jobs: null
 kanban:
+  dispatch_in_gateway: true
   dispatch_interval_seconds: 60
 code_execution:
   mode: project
@@ -311,9 +358,9 @@ platform_toolsets:
   - tts
   - web
 custom_providers:
-- name: llama-main
-  base_url: http://127.0.0.1:11500/v1
-  api_key: not-needed
-- name: llama-aux
-  base_url: http://127.0.0.1:11501/v1
-  api_key: not-needed
+  - name: llama-main
+    base_url: ***
+    api_key: ***
+  - name: llama-aux
+    base_url: ***
+    api_key: ***

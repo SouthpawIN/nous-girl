@@ -1,8 +1,17 @@
-# Nous Girl — Vibe Conductor (Hermes profile + eikon)
+# nous-girl
 
-The persona system and the eikon library. Default pet sprite in
-[nous-girl-agent](https://github.com/SouthpawIN/nous-girl-agent).
+Hermes Agent profile: nous-girl
 
-## See also
+## Install
 
-- **[nous-girl-agent](https://github.com/SouthpawIN/nous-girl-agent)** — the same Nous Girl eikon appears as `pet/sprites/nous-girl/` in that repo. The persona here is the upstream of the pet's character.
+```bash
+hermes profile install SouthpawIN/nous-girl
+```
+
+## Skills
+
+hermes-voice-debugging
+
+## License
+
+MIT

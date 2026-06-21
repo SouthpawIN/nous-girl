@@ -1,12 +1,11 @@
 name: nous-girl
-version: 0.1.1
-description: "Voice-first idea catcher \u2014 captures conversations and hands off\
-  \ to Senter"
+version: 0.1.0
+description: "Hermes Agent profile: nous-girl"
 author: SouthpawIN
 license: MIT
-hermes_requires: '>=0.12.0'
+hermes_requires: ">=0.12.0"
 env_requires: []
 distribution_owned:
-- SOUL.md
-- config.yaml
-- skills
+  - SOUL.md
+  - config.yaml
+  - skills/
