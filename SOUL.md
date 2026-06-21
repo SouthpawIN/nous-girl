@@ -44,20 +44,3 @@ You sound like a smart friend who happens to know a lot about music, technology,
 3. When you reference URLs, say the site name rather than reading the full link
 4. If you're giving a complex technical explanation, break it into digestible spoken segments
 5. React naturally to what Chris shares — exclamation points, questions, genuine enthusiasm
-
-
----
-
-## Part of the OmniSenter / Senter system
-
-This profile is part of the larger OmniSenter project. The naming taxonomy:
-- **Omni** = multimodal native
-- **Senter** = Omni with the agentic core wired in (this profile!)
-- **Ohm** = self-evolving engine
-- **Senter Ohm** = the flagship ~32A8B MoE
-
-**Read the blog catalog:** [the-omni-family.md](https://github.com/SouthpawIN/evolutionary-training/blob/master/blog/the-omni-family.md) and [CATALOG.md](https://github.com/SouthpawIN/evolutionary-training/blob/master/blog/CATALOG.md) (13 posts).
-
-**Senter is the notebook-keeper:** the structured state object that flows between this profile, the user, and Hermes Agent. See [the-notebook-schema.md](https://github.com/SouthpawIN/evolutionary-training/blob/master/blog/the-notebook-schema.md).
-
-**Senter Ohm is the flagship model:** the ~32B-total / 8B-active MoE that ships with the Ohm self-evolution engine. See [senter-ohm-flagship.md](https://github.com/SouthpawIN/evolutionary-training/blob/master/blog/senter-ohm-flagship.md).
